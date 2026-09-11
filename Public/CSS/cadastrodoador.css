@@ -1,0 +1,405 @@
+/* =========================================
+   VARIÁVEIS (Estética #3498db)
+   ========================================= */
+:root {
+  --primary: #3498db;
+  --primary-dark: #2980b9;
+  --text: #333;
+  --text-light: #666;
+  --bg: #fff;
+  --bg-light: #f8f9fa;
+  --border: #e0e0e0;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --radius: 8px;
+  --font: 'Poppins', sans-serif;
+  --transition: all 0.3s ease;
+}
+
+/* =========================================
+   GERAL
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  font-family: var(--font);
+  color: var(--text);
+  line-height: 1.6;
+  background-color: var(--bg);
+  padding-top: 70px;
+}
+
+/* =========================================
+   CABEÇÁRIO (Header + Logo + Menu)
+   ========================================= */
+.header {
+  background-color: var(--bg);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.background-header {
+  padding: 0.5rem 10%;
+}
+
+.navegacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: var(--font);
+}
+
+/* Logo */
+.logo a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: -0.03em;
+  transition: color 0.2s ease;
+  font-family: var(--font);
+}
+
+.logo a:hover {
+  color: var(--primary-dark);
+}
+
+/* Menu */
+.ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+  font-family: var(--font);
+}
+
+.menu-link {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-family: var(--font);
+  transition: var(--transition);
+  padding: 0.5rem 0;
+  position: relative;
+  display: inline-block; /* necessário para a animação subir */
+}
+
+/* =========================================
+   ✨ ANIMAÇÃO NO HOVER DO MENU
+   (Sobre, Contactos, Suporte, etc.)
+   ========================================= */
+.menu-link:hover {
+  color: var(--primary);
+  transform: translateY(-3px); /* sobe suavemente */
+}
+
+.menu-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+
+.menu-link:hover::after {
+  width: 100%;
+}
+
+
+
+/* =========================================
+   🌟 SEÇÃO HERO
+   ========================================= */
+.hero {
+  padding: 5rem 5% 4rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(46, 204, 113, 0.05) 100%);
+  font-family: var(--font);
+}
+
+.hero-conteudo {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-family: var(--font);
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-family: var(--font);
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  color: var(--text-light);
+  font-family: var(--font);
+}
+
+/* =========================================
+   📖 SEÇÃO SOBRE
+   ========================================= */
+.sobre {
+  padding: 4rem 5%;
+  background-color: var(--bg-light);
+  font-family: var(--font);
+}
+
+.imagem-posi {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.sobre-texto {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.sobre-titulo {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-family: var(--font);
+}
+
+.sobre p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  font-size: 1.1rem;
+  font-family: var(--font);
+}
+
+.projeto-imagem {
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* =========================================
+   LOGIN / CADASTRO (Proporcional)
+   ========================================= */
+.pagina-login {
+  max-width: 440px;
+  width: 90%;
+  margin: 5vh auto;
+  padding: 0 1rem;
+  font-family: var(--font);
+}
+
+.login-card {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(52, 152, 219, 0.12);
+  border: 1px solid var(--border);
+  font-family: var(--font);
+  box-sizing: border-box;
+}
+
+.login-card h1 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+  font-family: var(--font);
+}
+
+.login-sub {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem; /* ligeiramente reduzido */
+  font-family: var(--font);
+}
+
+/* =========================================
+   FORMULÁRIO ABAIXADO
+   ========================================= */
+.form-login {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  font-family: var(--font);
+  margin-top: 1.8rem; /* ⬅️ ABAIXA O FORMULÁRIO DENTRO DO CARD */
+}
+
+.campo-formulario {
+  margin-bottom: 0;
+}
+
+.campo-formulario label {
+  display: block;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-family: var(--font);
+}
+
+/* Todos os inputs (Nome, Email, Telefone, Senha, Confirmar) */
+.campo-form {
+  width: 100%;
+  height: 48px;
+  padding: 0 1rem;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  color: var(--text);
+  background-color: #fff;
+  transition: var(--transition);
+  box-sizing: border-box;
+}
+
+.campo-form:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+/* Erro */
+.campo-form.erro-input {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.erro-msg {
+  display: block;
+  color: #e74c3c;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  min-height: 1.1em;
+  font-family: var(--font);
+}
+
+/* Checkbox Termos */
+.campo-check {
+  margin: 1rem 0 1.5rem;
+  font-family: var(--font);
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  margin-top: 2px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.campo-check a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-family: var(--font);
+}
+
+.campo-check a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Botão Criar Conta / Entrar */
+.form-login .btn-sobre {
+  width: 100%;
+  height: 50px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.form-login .btn-sobre:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(52, 152, 219, 0.25);
+}
+
+/* Nota pequena sob senha */
+.form-login small {
+  color: var(--text-light);
+  font-size: 0.75rem;
+  margin-top: 0.15rem;
+  display: block;
+  font-family: var(--font);
+}
+
+/* Link "Já tem conta?" */
+.login-mensagem {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-family: var(--font);
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.login-mensagem a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-family: var(--font);
+}
+
+.login-mensagem a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+footer {
+    text-align: center;
+    padding: 2rem;
+    
+    /* COR DE FUNDO DO FOOTER */
+    background-color: #3498db  !important; /* Mude este código para a cor desejada */
+    
+    color: white; /* Cor do texto (branco para contraste) */
+    font-family: var(--font); /* Mantém a fonte Poppins */
+    font-size: 0.95rem;
+    
+    /* Opcional: Borda superior sutil se quiser separar do conteúdo */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+

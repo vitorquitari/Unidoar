@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/cadastrodoador.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/cadastroONG.css">
+
+    <title>Cadastro ONG — Unidoar</title>
+</head>
+<body>
+
+<header>
+    <div class="background-header">
+        <nav class="navegacao" style="max-width:1200px;margin:0 auto;padding:1rem 5%;">
+            <div class="logo">
+                <a href="index1.html">UNIDOAR</a>
+            </div>
+            <ul class="ul">
+                <li><a href="sobre1.html" class="menu-link">Sobre</a></li>
+                <li><a href="contactos.html" class="menu-link">Contactos</a></li>
+                <li><a href="suporte.html" class="menu-link">Suporte</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="pagina-login">
+    <div class="login-card">
+        <h1>Cadastrar ONG</h1>
+        <p class="login-sub">Preencha os dados da organização para se registar na plataforma.</p>
+
+        <form id="formCadastroONG" class="form-login" novalidate>
+
+            <!-- DADOS DA ONG -->
+            <div class="grupo-form">
+                <h3 class="grupo-titulo">Dados da ONG</h3>
+
+                <div class="campo-formulario">
+                    <label for="nome-ong">Nome da ONG *</label>
+                    <input type="text" id="nome-ong" name="nome-ong" class="campo-form" placeholder="Ex: Associação Solidária" required>
+                    <span class="erro-msg" id="erro-nome-ong"></span>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="nif">NIF *</label>
+                    <input type="text" id="nif" name="nif" class="campo-form" placeholder="Ex: 123456789" required>
+                    <span class="erro-msg" id="erro-nif"></span>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="area">Área de atuação *</label>
+                    <input type="text" id="area" name="area" class="campo-form" placeholder="Ex: Educação, Saúde, Ambiente" required>
+                    <span class="erro-msg" id="erro-area"></span>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="email-inst">E-mail Institucional *</label>
+                    <input type="email" id="email-inst" name="email-inst" class="campo-form" placeholder="ong@exemplo.org" required>
+                    <span class="erro-msg" id="erro-email-inst"></span>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="tel-ong">Telefone *</label>
+                    <input type="tel" id="tel-ong" name="tel-ong" class="campo-form" placeholder="912345678" required>
+                    <span class="erro-msg" id="erro-tel-ong"></span>
+                </div>
+            </div>
+
+            <!-- ENDEREÇO -->
+            <div class="grupo-form">
+                <h3 class="grupo-titulo">Endereço</h3>
+
+                <div class="campo-formulario">
+                    <label for="endereco">Endereço *</label>
+                    <input type="text" id="endereco" name="endereco" class="campo-form" placeholder="Rua, número, bairro" required>
+                    <span class="erro-msg" id="erro-endereco"></span>
+                </div>
+
+                <div class="campo-formulario linha-dupla">
+                    <div class="campo-metade">
+                        <label for="provincia">Província *</label>
+                        <input type="text" id="provincia" name="provincia" class="campo-form" placeholder="Ex: Luanda" required>
+                    </div>
+                    <div class="campo-metade">
+                        <label for="municipio">Município *</label>
+                        <input type="text" id="municipio" name="municipio" class="campo-form" placeholder="Ex: Talatona" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REPRESENTANTE -->
+            <div class="grupo-form">
+                <h3 class="grupo-titulo">Representante Legal</h3>
+
+                <div class="campo-formulario">
+                    <label for="nome-rep">Nome do Representante *</label>
+                    <input type="text" id="nome-rep" name="nome-rep" class="campo-form" placeholder="Nome completo do representante" required>
+                    <span class="erro-msg" id="erro-nome-rep"></span>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="cargo">Cargo *</label>
+                    <input type="text" id="cargo" name="cargo" class="campo-form" placeholder="Ex: Diretor, Presidente" required>
+                    <span class="erro-msg" id="erro-cargo"></span>
+                </div>
+            </div>
+
+            <!-- DOCUMENTOS -->
+            <div class="grupo-form">
+                <h3 class="grupo-titulo">Documentos</h3>
+
+                <div class="campo-formulario">
+                    <label for="logo">Upload do Logótipo</label>
+                    <div class="campo-arquivo">
+                        <input type="file" id="logo" name="logo" accept="image/*" class="campo-file">
+                        <label for="logo" class="label-file">Escolher ficheiro</label>
+                        <span class="nome-arquivo" id="nome-logo">Nenhum ficheiro selecionado</span>
+                    </div>
+                    <span class="erro-msg" id="erro-logo"></span>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="doc-registo">Upload do Documento de Registo *</label>
+                    <div class="campo-arquivo">
+                        <input type="file" id="doc-registo" name="doc-registo" accept=".pdf,.jpg,.png" class="campo-file" required>
+                        <label for="doc-registo" class="label-file">Escolher ficheiro</label>
+                        <span class="nome-arquivo" id="nome-doc">Nenhum ficheiro selecionado</span>
+                    </div>
+                    <span class="erro-msg" id="erro-doc-registo"></span>
+                </div>
+            </div>
+
+            <!-- SEGURANÇA -->
+            <div class="grupo-form">
+                <h3 class="grupo-titulo">Segurança</h3>
+
+                <div class="campo-formulario">
+                    <label for="senha">Palavra-passe *</label>
+                    <input type="password" id="senha" name="senha" class="campo-form" placeholder="Mínimo 8 caracteres" required>
+                    <span class="erro-msg" id="erro-senha"></span>
+                    <small>Deve ter: 8+ caracteres, 1 maiúscula, 1 minúscula e 1 número.</small>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="confirmar">Confirmar Palavra-passe *</label>
+                    <input type="password" id="confirmar" name="confirmar" class="campo-form" placeholder="Repete a palavra-passe" required>
+                    <span class="erro-msg" id="erro-confirmar"></span>
+                </div>
+            </div>
+
+            <!-- CONFIRMAÇÃO -->
+            <div class="grupo-form">
+                <h3 class="grupo-titulo">Confirmação</h3>
+
+                <div class="campo-check">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="termos" name="termos" required>
+                        <span class="checkmark"></span>
+                        Aceito os <a href="#">Termos de Uso</a>.
+                    </label>
+                    <span class="erro-msg" id="erro-termos"></span>
+                </div>
+
+                <div class="campo-check">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="declaracao" name="declaracao" required>
+                        <span class="checkmark"></span>
+                        Declaro que as informações são verdadeiras.
+                    </label>
+                    <span class="erro-msg" id="erro-declaracao"></span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-sobre">Cadastrar ONG</button>
+        </form>
+
+        <p class="login-mensagem">
+            Já tem conta? <a href="loginONG.html">Iniciar sessão</a>.
+        </p>
+    </div>
+</main>
+
+<footer>
+    <p>© Unidoar — Plataforma de Arrecadação de Doações de Itens Materiais.</p>
+</footer>
+
+<script src="js/validacao-cadastro.js"></script>
+</body>
+</html>

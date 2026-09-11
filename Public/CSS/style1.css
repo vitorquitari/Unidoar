@@ -1,0 +1,362 @@
+
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Fica atrás do conteúdo */
+}
+   
+
+
+
+
+:root {
+  /* Cores */
+  --primary: #3498db;       /* Azul solidário (títulos e botões principais) */
+  --primary-dark: #2980b9; /* Azul escuro (hover) */
+  --secondary:#3498db;     /* Verde (botões secundários) */
+  --secondary-dark: #3498db;
+  --text: #f7f5f5;            /* Texto principal */
+  --text-light:#f7f5f5;     /* Texto secundário */
+  --bg: #0c253b;              /* Fundo branco */
+  --bg-light: #f8f9fa;    /* Fundo claro (seções alternadas) */
+  --border: #e0e0e0;       /* Borda sutis */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra leve */
+
+  /* Tipografia */
+  --font: 'Poppins', sans-serif;
+
+  /* Espaçamento e formas */
+  --radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  line-height: 1.6;
+  background-color: var(--bg);
+  padding-top: 70px; /* Evita sobreposição com o header fixo */
+}
+
+/* ======================
+   📌 HEADER E NAVEGAÇÃO
+   ====================== */
+header {
+  background-color: var(--bg);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.background-header {
+  padding: 1rem 5%;
+}
+
+.navegacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.8rem;
+    letter-spacing: -0.03em;
+    transition: color 0.2s ease;
+}
+
+.logo a:hover {
+    color: var(--cor-destaque); /* ou mantenho a mesma cor se preferires */
+}
+
+.ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Links do menu */
+.menu-link {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: var(--transition);
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.menu-link:hover {
+  color: var(--primary);
+}
+
+.menu-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+
+.menu-link:hover::after {
+  width: 100%;
+}
+
+/* Botão "Doar" no header */
+.btn-doar {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.btn-doar:hover {
+  background-color: var(--primary-dark);
+}
+
+/* ======================
+   🌟 SEÇÃO HERO
+   ====================== */
+.hero {
+  padding: 4rem 5%;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(46, 204, 113, 0.05) 100%);
+}
+
+.hero-conteudo {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  color: var(--text-light);
+}
+
+/* ======================
+   📖 SEÇÃO SOBRE
+   ====================== */
+.sobre {
+  padding: 4rem 5%;
+  background-color:  #ffffff;
+
+}
+
+.imagem-posi {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sobre-texto {
+  flex: 1;
+  text-align: left;
+}
+
+.sobre-titulo {
+  font-size: 2rem;
+  color: #3498db;
+  margin-bottom: 1rem;
+}
+
+.sobre p {
+  margin-bottom: 2rem;
+  color: #3498db;
+  font-size: 1.1rem;
+}
+
+/* Botões "Doador" e "ONG" */
+.botoes-sobre {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.btn-sobre {
+    display: inline-block;
+    padding: 1rem 2.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.25s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: #3498db;
+    letter-spacing: 0.01empx;
+}
+
+/* =========================================
+   VARIAÇÃO DOADOR
+   ========================================= */
+.btn-doador {
+    background-color: #3498db(--cor-destaque); /* Teal */
+    color: var(--cor-primaria);            /* Texto escuro para contraste */
+}
+
+.btn-doador:hover {
+    background-color: #3498db;
+    color: var(--cor-white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 236, 213, 0.856);
+}
+
+/* =========================================
+   VARIAÇÃO ONG
+   ========================================= */
+.btn-ong {
+    background-color: var(--cor-primaria); /* Azul escuro */
+    color: var(--cor-branco);
+    border: 2px solid transparent;
+}
+
+.btn-ong:hover {
+    background-color: transparent;
+    color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(47, 77, 146, 0.15);
+}
+.sobre .btn-sobre:hover {
+  background-color: var(--secondary-dark);
+  transform: translateY(-2px);
+}
+
+.projeto-imagem {
+  
+
+  border-radius: 16px;
+box-shadow: 0 20px 50px rgba(12, 37, 59, 0.12), 0 4px 12px rgba(12, 37, 59, 0.06);
+border: 1px solid #f0f3f6;
+background-color: #ffffff;
+}
+
+
+
+/* ======================
+   👇 FOOTER
+   ====================== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #0c253b;
+  color:#3498db;
+  font-size: 0.95rem;
+}
+
+/* ======================
+   📱 RESPONSIVIDADE
+   ====================== */
+@media (max-width: 992px) {
+  .imagem-posi {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-texto {
+    text-align: center;
+  }
+
+  .projeto-imagem {
+    margin-top: 2rem;
+    max-width: 500px;
+  }
+
+  .sobre .btn-sobre {
+    margin: 0 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navegacao {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .sobre-titulo,
+  .contatos-titulo,
+  .suporte h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.3rem;
+  }
+
+  .sobre .btn-sobre {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .formulario-contatos {
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,59 @@
+
+   <link rel="stylesheet" href="logindoador.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/cadastrodoador.css">
+    
+
+<form id="formLogin" class="form-login" novalidate>
+    <div class="campo-formulario">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" 
+               placeholder="o.teu@email.com" class="campo-form" required>
+        <span class="erro-msg" id="erro-email"></span>
+    </div>
+
+    <div class="campo-formulario">
+        <label for="senha">Palavra-passe</label>
+        <input type="password" id="senha" name="senha" 
+               placeholder="••••••••" class="campo-form" required>
+        <span class="erro-msg" id="erro-senha"></span>
+    </div>
+
+    <button type="submit" class="btn-sobre btn-doador">Entrar</button>
+</form>
+
+<script>
+document.getElementById('formLogin').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value.trim();
+    const senha = document.getElementById('senha').value;
+    const btn = e.target.querySelector('button');
+
+    btn.disabled = true;
+    btn.textContent = 'A entrar...';
+
+    try {
+        const res = await fetch('/api/login/doador', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, senha })
+        });
+
+        const resultado = await res.json();
+
+        if (resultado.sucesso) {
+            localStorage.setItem('token', resultado.token);
+            localStorage.setItem('usuarioLogado', JSON.stringify(resultado.usuario));
+            window.location.href = 'dashboard-doador.html';
+        } else {
+            document.getElementById('erro-email').textContent = resultado.mensagem;
+            btn.disabled = false;
+            btn.textContent = 'Entrar';
+        }
+    } catch {
+        btn.disabled = false;
+        btn.textContent = 'Entrar';
+    }
+});
+</script>

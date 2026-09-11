@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/cadastrodoador.css">
+    
+    <title>Cadastro — Unidoar</title>
+</head>
+<body>
+
+<header>
+    <div class="background-header">
+        <nav class="navegacao" style="max-width:1200px;margin:0 auto;padding:1rem 5%;">
+            <div class="logo">
+                <a href="index1.html">UNIDOAR</a>
+            </div>
+            <ul class="ul">
+                <li><a href="sobre1.html" class="menu-link">Sobre</a></li>
+                <li><a href="contactos.html" class="menu-link">Contactos</a></li>
+                <li><a href="suporte.html" class="menu-link">Suporte</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="pagina-login">
+    <div class="login-card">
+        
+        <p class="login-sub">Preencha os dados para se registar na plataforma.</p>
+
+        <form id="formCadastro" class="form-login" novalidate>
+            
+            <div class="campo-formulario">
+                <label for="nome">Nome Completo </label>
+                <input type="text" id="nome" name="nome" class="campo-form" placeholder="O teu nome completo" required>
+                <span class="erro-msg" id="erro-nome"></span>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="email">E-mail </label>
+                <input type="email" id="email" name="email" class="campo-form" placeholder="o.teu@email.com" required>
+                <span class="erro-msg" id="erro-email"></span>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="telefone">Telefone </label>
+                <input type="tel" id="telefone" name="telefone" class="campo-form" placeholder="912345678" required>
+                <span class="erro-msg" id="erro-telefone"></span>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="senha">Palavra-passe </label>
+                <input type="password" id="senha" name="senha" class="campo-form" placeholder="Mínimo 8 caracteres" required>
+                <span class="erro-msg" id="erro-senha"></span>
+                <small style="color:#666;font-size:0.8rem;">Deve ter: 8+ caracteres, 1 maiúscula, 1 minúscula e 1 número.</small>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="confirmar">Confirmar Palavra-passe </label>
+                <input type="password" id="confirmar" name="confirmar" class="campo-form" placeholder="Repete a palavra-passe" required>
+                <span class="erro-msg" id="erro-confirmar"></span>
+            </div>
+
+            <div class="campo-check">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="termos" name="termos" required>
+                    <span class="checkmark"></span>
+                    Aceito os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a>.
+                </label>
+                <span class="erro-msg" id="erro-termos"></span>
+            </div>
+
+            <button type="submit" class="btn-sobre">Criar Conta</button>
+        </form>
+
+        <p class="login-mensagem">
+            Já tem conta? <a href="logindoador.html">Iniciar sessão</a>.
+        </p>
+    </div>
+</main>
+
+<footer>
+    <p>© Unidoar — Plataforma de Arrecadação de Doações de Itens Materiais.</p>
+</footer>
+
+<script src="js/validacao-cadastro.js"></script>
+</body>
+</html>
